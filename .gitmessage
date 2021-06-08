@@ -1,7 +1,8 @@
+# vim: colorcolumn=51,73,81
 
 # Title: Summary, imperative, start upper case, do'nt end with a period
 # Format: <type>(<scope>): <subject>
-# No more than 50 chars
+# No more than 50 chars---------------------------
 #
 # Type List
 # (from https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type)
@@ -20,6 +21,4 @@
 # Remember blank line between title and body
 
 # Body: Explain *what* and *why* (not *how*). Include task ID
-# Wrap at 72 chars
-#
-# vim: colorcolumn=51,73,81
+# Wrap at 72 chars------------------------------------------------------
