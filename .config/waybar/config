@@ -1,0 +1,104 @@
+{
+  "layer"       : "top",
+  "position"    : "top",
+  "height"      : 30,
+  "modules-left":
+  [
+    "sway/workspaces",
+    "sway/mode"
+  ],
+  "modules-center":
+  [
+    "clock"
+  ],
+  "modules-right":
+  [
+    "idle_inhibitor",
+    "network",
+    "pulseaudio",
+    "battery",
+    "tray"
+  ],
+
+  "battery":
+  {
+    "format"      : "{icon}",
+    "format-icons": ["", "", "", "", ""],
+    "interval"    : 60,
+    "max-length"  : 25,
+    "states"      :
+    {
+      "warning" : 30,
+      "critical": 15
+    },
+    "tooltip-format": "{capacity}%"
+  },
+  "clock":
+  {
+    "format"  : "{:%b %d  %H:%M  %A}",
+    "interval"  : 60,
+    "tooltip"   : false
+  },
+  "idle_inhibitor":
+  {
+    "format": "{icon} ",
+    "format-icons":
+    {
+      "activated"  : "",
+      "deactivated": ""
+    }
+  },
+  "network":
+  {
+    "format-wifi"        : " ",
+    "format-ethernet"    : " ",
+    "format-disconnected": " ",
+    "interval"           : 60,
+    "tooltip"            : false
+  },
+  "pulseaudio":
+  {
+    "format"          : "{icon} ",
+    "format-bluetooth": "{icon} ",
+    "format-muted"    : "",
+    "format-icons"    :
+    {
+      "headphone" : "",
+      "hands-free": "",
+      "headset"   : "",
+      "phone"     : "",
+      "portable"  : "",
+      "car"       : "",
+      "default"   : ["奄", "奔", "墳", ""]
+    },
+    "scroll-step"   : 5,
+    "on-click"      : "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol"
+  },
+  "sway/mode":
+  {
+    "format": "{}"
+  },
+  "sway/workspaces":
+  {
+    "format"      : "{icon} ",
+    "format-icons":
+    {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "urgent" : "",
+      "focused": "",
+      "default": ""
+    }
+  },
+  "sway/window":
+  {
+    "format"    : "{}",
+    "max-length": 80
+  },
+}

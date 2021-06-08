@@ -1,0 +1,63 @@
+/* Base */
+
+*
+{
+  border       : none;
+  border-radius: 0;
+  margin       : 0;
+  min-height   : 0;
+  padding      : 0;
+}
+
+#waybar
+{
+  background : transparent;
+  color      : lightgrey;
+  font-family: Hack Nerd Font;
+  font-size  : 16px;
+}
+
+#workspaces, #cmus, #window,
+#network, #pulseaudio, #idle_inhibitor, #tray, #clock, #battery
+{
+  padding-left : 10px;
+  padding-right: 10px;
+}
+
+/* Modular */
+
+#idle_inhibitor.activated,
+#network.disconnected,
+#pulseaudio.muted,
+#battery.critical
+{
+  color: red;
+}
+
+#battery.charging
+{
+  color: lightgreen;
+}
+
+#battery.warning
+{
+  color: yellow;
+}
+
+#mode
+{
+  color     : deepskyblue;
+  font-style: italic;
+}
+
+#workspaces button
+{
+  padding: 0 5px;
+  color  : grey;
+}
+
+#workspaces button.focused
+{
+  color: deepskyblue;
+}
+
