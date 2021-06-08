@@ -1,0 +1,25 @@
+
+# Title: Summary, imperative, start upper case, do'nt end with a period
+# Format: <type>(<scope>): <subject>
+# No more than 50 chars
+#
+# Type List
+# (from https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type)
+#
+# feat    : A new feature
+# fix     : A bug fix
+# docs    : Documentation only changes
+# styles  : Changes that do not affect the meaning of the code
+#           (white-spacing, formatting, missing semi-colons, etc)
+# refactor: A code change that neither fixes bug nor adds a feature
+# perf    : A code change that improves performance
+# test    : Adding missing or correcting existing tests
+# chore   : Changes to the build process or auxiliary tools  and libraries such
+#           as documentation generation
+
+# Remember blank line between title and body
+
+# Body: Explain *what* and *why* (not *how*). Include task ID
+# Wrap at 72 chars
+#
+# vim: colorcolumn=51,73,81
