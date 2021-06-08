@@ -51,20 +51,13 @@
 
     readonly local git_branch=" `echo $git_status | sed -n '1p' | cut -c4-`"
 
-    if [[ `echo $git_status | grep ^ -c -m 2` -eq 1 ]]; then
+    if   [[ `echo $git_status | grep ^ -c -m 2` -eq 1 ]]; then
       echo "%F{green}${git_branch}%f"
-      return
-    fi
-
-    if [[ `echo $git_status | grep -E '^[ADU][AU]|^DD' -c -m 1` -eq 1 ]]; then
+    elif [[ `echo $git_status | grep -E '^[ADU][AU]|^DD' -c -m 1` -eq 1 ]]; then
       echo "%F{red}${git_branch}%f"
-      return
-    fi
-
-    if [[ `echo $git_status | grep -E '^??|^[ MARC]M|^M[ MD]' -c -m 1`
-          -eq 1 ]]; then
+    elif [[ `echo $git_status | grep -E '^??|^[ MARC]M|^M[ MD]' -c -m 1`
+            -eq 1 ]]; then
       echo "%F{yellow}${git_branch}%f"
-      return
     fi
   }
 
