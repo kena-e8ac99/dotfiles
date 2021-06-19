@@ -4,6 +4,7 @@
     set hidden
     set autoread
     set autochdir
+    set clipboard=unnamedplus
     set wildmenu
     set wildmode=longest:full,full
     set completeopt=menuone,noinsert
