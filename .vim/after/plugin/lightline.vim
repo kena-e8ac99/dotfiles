@@ -44,11 +44,11 @@ let g:lightline.component_type.lsp_warning         = 'warning'
 let g:lightline.component_type.lsp_ok              = 'right'
 
 function! ShowMode() abort
-  return &filetype =~# '^\%(help\|netrw\|fern\)' ? '' : lightline#mode()
+  return &filetype =~# '^\%(help\|netrw\|fern\|vista\)' ? '' : lightline#mode()
 endfunction
 
 function! ShowFileFormat() abort
-  if &filetype =~# '^\%(netrw\|fern\)'
+  if &filetype =~# '^\%(netrw\|fern\|vista\)'
     return ''
   endif
   if exists('*nerdfont#find')
@@ -59,11 +59,11 @@ function! ShowFileFormat() abort
 endfunction
 
 function! ShowFileEncoding() abort
-  return &filetype =~# '^\%(netrw\|fern\)' ? '' : &fileencoding
+  return &filetype =~# '^\%(netrw\|fern\|vista\)' ? '' : &fileencoding
 endfunction
 
 function! ShowFileType() abort
-  if &filetype =~# '^\%(netrw\|fern\)'
+  if &filetype =~# '^\%(netrw\|fern\|vista\)'
     return ''
   endif
   if exists('*nerdfont#find')
@@ -74,7 +74,7 @@ function! ShowFileType() abort
 endfunction
 
 function! ShowModified() abort
-  if &filetype =~# '^\%(netrw\|fern\)'
+  if &filetype =~# '^\%(netrw\|fern\|vista\)'
     return ''
   endif
   if &modified
@@ -87,13 +87,13 @@ function! ShowModified() abort
 endfunction
 
 function! ShowLine() abort
-  return &filetype =~# '^\%(netrw\|fern\)' ? '' : 'ﴵ ' . line('.') . '/'
-                                                \ . line('$')
+  return &filetype =~# '^\%(netrw\|fern\|vista\)'
+                     \ ? '' : 'ﴵ ' . line('.') . '/' . line('$')
 endfunction
 
 function! ShowColumn() abort
-  return &filetype =~# '^\%(netrw\|fern\)' ? '' : 'ﴳ ' . col('.') . '/'
-                                                \ . col('$')
+  return &filetype =~# '^\%(netrw\|fern\|vista\)'
+                     \ ? '' : 'ﴳ ' . col('.') . '/' . col('$')
 endfunction
 
 function! s:SubstitutePath(path) abort
@@ -106,15 +106,16 @@ function! s:SubstitutePath(path) abort
 endfunction
 
 function! ShowFullPath() abort
-  return &filetype ==# 'netrw' ? '' : s:SubstitutePath(expand('%:p'))
+  return &filetype =~# '^\%(netrw\|vista\)' ? ''
+                                          \ : s:SubstitutePath(expand('%:p'))
 endfunction
 
 function! ShowRelativePath() abort
-  return &filetype ==# 'netrw' ? '' : s:SubstitutePath(expand('%'))
+  return &filetype =~# '^\%(netrw\|vista\)' ? '' : s:SubstitutePath(expand('%'))
 endfunction
 
 function! ShowGitBranch() abort
-  if &filetype =~# '^\%(help\|netrw\|fern\)' || !exists("*FugitiveHead")
+  if &filetype =~# '^\%(help\|netrw\|fern\|vista\)' || !exists("*FugitiveHead")
     return ''
   endif
   const l:branch = FugitiveHead()
