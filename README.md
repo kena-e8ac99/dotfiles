@@ -11,4 +11,5 @@
   - slurp
 - vim / gvim
   - clang
+  - ctags
 - zsh
