@@ -67,3 +67,6 @@
 [submodule ".config/alacritty/colorsheme/nord-alacritty"]
 	path = .config/alacritty/colorsheme/nord-alacritty
 	url = https://github.com/arcticicestudio/nord-alacritty
+[submodule ".vim/pack/plugins/start/vista.vim"]
+	path = .vim/pack/plugins/start/vista.vim
+	url = https://github.com/liuchengxu/vista.vim
