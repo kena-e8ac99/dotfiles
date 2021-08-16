@@ -116,8 +116,8 @@
     bindsym XF86AudioMute        exec pactl set-sink-mute   @DEFAULT_SINK@ toggle
   # }}}
   # Print {{{
-    bindsym Print       exec grim               ~/pictures/screenshots/$(date +'screenshot_%Y-%m-%d-%H:%M:%S')
-    bindsym Shift+Print exec grim -g "$(slurp)" ~/pictures/screenshots/$(date +'screenshot_%Y-%m-%d-%H:%M:%S')
+    bindsym Print       exec grim               ~/pictures/screenshots/$(date +'screenshot_%Y-%m-%d-%H:%M:%S.jpg')
+    bindsym Shift+Print exec grim -g "$(slurp)" ~/pictures/screenshots/$(date +'screenshot_%Y-%m-%d-%H:%M:%S.jpg')
   # }}}
   # System {{{
     mode "system"
