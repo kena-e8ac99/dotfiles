@@ -50,17 +50,17 @@
   },
   "network":
   {
-    "format-wifi"        : " ",
-    "format-ethernet"    : " ",
+    "format-wifi"        : " {essid} ({signalStrength}%)",
+    "format-ethernet"    : " {ifname}",
     "format-disconnected": " ",
     "interval"           : 60,
     "tooltip"            : false
   },
   "pulseaudio":
   {
-    "format"          : "{icon} ",
-    "format-bluetooth": "{icon} ",
-    "format-muted"    : "",
+    "format"          : "{icon} {volume}%",
+    "format-bluetooth": "{icon}  {volume}%",
+    "format-muted"    : " {volume}%",
     "format-icons"    :
     {
       "headphone" : "",
