@@ -7,6 +7,34 @@ if executable('clangd')
 \ })
 endif
 
+if executable('java') && filereadable(expand('~/bin/lsp/eclipse.jdt.ls/plugins/org.eclipse.equinox.launcher_1.5.600.v20191014-2022.jar'))
+  au User lsp_setup call lsp#register_server(
+  \ {
+  \ 'name': 'eclipse.jdt.ls',
+  \ 'cmd':
+  \ {
+    \ server_info->
+    \ [
+      \ 'java',
+      \ '-Declipse.application=org.eclipse.jdt.ls.core.id1',
+      \ '-Dosgi.bundles.defaultStartLevel=4',
+      \ '-Declipse.product=org.eclipse.jdt.ls.core.product',
+      \ '-Dlog.level=ALL',
+      \ '-noverify',
+      \ '-Dfile.encoding=UTF-8',
+      \ '-Xmx1G',
+      \ '-jar',
+      \ expand('~/bin/lsp/eclipse.jdt.ls/plugins/org.eclipse.equinox.launcher_1.5.600.v20191014-2022.jar'),
+      \ '-configuration',
+      \ expand('~/bin/lsp/eclipse.jdt.ls/config_win'),
+      \ '-data',
+      \ getcwd()
+    \ ]
+  \ },
+  \ 'whitelist': ['java'],
+  \ })
+endif
+
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
   nmap <buffer>        [g    <plug>(lsp-previous-diagnostic)
