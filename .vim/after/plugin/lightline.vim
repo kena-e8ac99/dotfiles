@@ -17,8 +17,7 @@ let g:lightline.active.right =
 let g:lightline.inactive       = {}
 let g:lightline.inactive.left  =
 \ [['show_git_branch', 'show_full_path', 'show_modified']]
-let g:lightline.inactive.right =
-\ [['show_line', 'show_column']]
+let g:lightline.inactive.right = []
 
 let g:lightline.component_function                 = {}
 let g:lightline.component_function.show_mode       = 'ShowMode'
