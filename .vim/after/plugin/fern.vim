@@ -1,6 +1,7 @@
 let g:fern#default_hidden  = 1
 let g:fern#default_exclude = '^\%(\.git\)$'
 let g:fern#renderer        = "nerdfont"
+let g:fern#drawer_width    = 24
 
 augroup fern_setting
   autocmd!
