@@ -142,10 +142,10 @@
     # another 30 seconds, and turn screen back on when resumed.
     # It will also lock screen before computer goes to sleep.
     exec swayidle -w \
-         timeout 600  'swaylock -f -c 000000'       \
-         timeout 630  'swaymsg "output * dpms off"' \
-         resume       'swaymsg "output * dpms on"'  \
-         before-sleep 'playerctl pause'             \
+         timeout 600  'swaylock -f -c 000000 && playerctl pause' \
+         timeout 630  'swaymsg "output * dpms off"'              \
+         resume       'swaymsg "output * dpms on"'               \
+         before-sleep 'playerctl pause'                          \
          before-sleep 'swaylock -f -c 000000'
   # }}}
   # Execute terminal emulator
