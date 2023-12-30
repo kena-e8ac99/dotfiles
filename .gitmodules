@@ -4,3 +4,6 @@
 [submodule ".vim/pack/syntax/start/vim-cpp-modern"]
 	path = .vim/pack/syntax/start/vim-cpp-modern
 	url = https://github.com/bfrg/vim-cpp-modern
+[submodule ".vim/pack/plugins/start/vim-lsp"]
+	path = .vim/pack/plugins/start/vim-lsp
+	url = https://github.com/prabirshrestha/vim-lsp
