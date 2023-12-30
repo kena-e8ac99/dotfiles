@@ -67,6 +67,7 @@ colorscheme nord
 set cmdheight=2
 set laststatus=2
 set showcmd
+source ~/.vim/statusline.vim
 
 # Key Mapping
 ## Normal Mode
