@@ -22,3 +22,6 @@
 [submodule ".vim/pack/plugins/start/vista.vim"]
 	path = .vim/pack/plugins/start/vista.vim
 	url = https://github.com/liuchengxu/vista.vim
+[submodule ".vim/pack/plugins/start/vim-gitgutter"]
+	path = .vim/pack/plugins/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
