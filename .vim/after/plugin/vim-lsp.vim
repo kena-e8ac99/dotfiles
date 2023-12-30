@@ -26,6 +26,10 @@ def OnLspBufferEnabled()
   nnoremap <buffer> <expr><C-d> lsp#scroll(+4)
   nnoremap <buffer> <expr><C-u> lsp#scroll(-4)
 
+  inoremap <expr>   <Tab>      pumvisible() ? "\<C-n>" : "\<Tab>"
+  inoremap <expr>   <S-Tab>    pumvisible() ? "\<C-p>" : "\<S-Tab>"
+  inoremap <expr>   <CR>       pumvisible() ? asyncomplete#close_popup() : "\<CR>"
+
   setlocal foldmethod=expr
   setlocal foldexpr=lsp#ui#vim#folding#foldexpr()
   setlocal foldtext=lsp#ui#vim#folding#foldtext()
