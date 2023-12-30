@@ -19,3 +19,6 @@
 [submodule ".vim/pack/plugins/start/vim-vsnip-integ"]
 	path = .vim/pack/plugins/start/vim-vsnip-integ
 	url = https://github.com/hrsh7th/vim-vsnip-integ
+[submodule ".vim/pack/plugins/start/vista.vim"]
+	path = .vim/pack/plugins/start/vista.vim
+	url = https://github.com/liuchengxu/vista.vim
