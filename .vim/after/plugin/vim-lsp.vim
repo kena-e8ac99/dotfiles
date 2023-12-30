@@ -8,7 +8,6 @@ if executable('clangd')
     'whitelist': ['c', 'cpp', 'cc']
   }
   setting.func(setting)
-  # au User lsp_setup lsp#register_server(setting)
 endif
 
 def OnLspBufferEnabled()
