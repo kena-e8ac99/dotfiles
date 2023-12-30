@@ -1,7 +1,5 @@
 vim9script
 
-nmap <buffer> <C-n>   <Nop>
-nmap <buffer> <C-p>   <Nop>
 nmap <buffer> <C-l>   <C-w>w
 nmap <buffer> h       -
 nmap <buffer> l       <CR>
