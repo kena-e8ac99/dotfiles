@@ -1,0 +1,3 @@
+[submodule ".vim/pack/colorscheme/start/nordtheme"]
+	path = .vim/pack/colorscheme/start/nordtheme
+	url = https://github.com/nordtheme/vim

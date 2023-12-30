@@ -61,6 +61,7 @@ set listchars=tab:>-,trail:-
 
 # Colorscheme
 set background=dark
+colorscheme nord
 
 # Statusline
 set cmdheight=2
