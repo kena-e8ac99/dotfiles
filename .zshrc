@@ -1,9 +1,5 @@
 # Key Binding
 bindkey -v
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
 
 # Export
 export EDITOR=vim
@@ -30,6 +26,7 @@ colors
 # Completion
 autoload -Uz compinit
 compinit
+zmodload zsh/complist
 
 zstyle ':completion:*' use-cache true
 zstyle ':completion:*' cache-path "~/.zsh/zcompcache"
@@ -57,6 +54,11 @@ setopt magic_equal_subst
 setopt nomatch
 setopt nolistbeep
 zle -N zle-keymap-select
+
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
 
 # Alias
 alias ls='ls --color=auto'
