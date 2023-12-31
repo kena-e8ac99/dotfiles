@@ -113,3 +113,7 @@ function zle-keymap-select() {
   zle reset-prompt
 }
 
+# Plugins
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_STRATEGY=(completion)
+
