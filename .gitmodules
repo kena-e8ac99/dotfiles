@@ -1,0 +1,27 @@
+[submodule ".vim/pack/colorscheme/start/nordtheme"]
+	path = .vim/pack/colorscheme/start/nordtheme
+	url = https://github.com/nordtheme/vim
+[submodule ".vim/pack/syntax/start/vim-cpp-modern"]
+	path = .vim/pack/syntax/start/vim-cpp-modern
+	url = https://github.com/bfrg/vim-cpp-modern
+[submodule ".vim/pack/plugins/start/vim-lsp"]
+	path = .vim/pack/plugins/start/vim-lsp
+	url = https://github.com/prabirshrestha/vim-lsp
+[submodule ".vim/pack/plugins/start/asyncomplete.vim"]
+	path = .vim/pack/plugins/start/asyncomplete.vim
+	url = https://github.com/prabirshrestha/asyncomplete.vim
+[submodule ".vim/pack/plugins/start/asyncomplete-lsp.vim"]
+	path = .vim/pack/plugins/start/asyncomplete-lsp.vim
+	url = https://github.com/prabirshrestha/asyncomplete-lsp.vim
+[submodule ".vim/pack/plugins/start/vim-vsnip"]
+	path = .vim/pack/plugins/start/vim-vsnip
+	url = https://github.com/hrsh7th/vim-vsnip
+[submodule ".vim/pack/plugins/start/vim-vsnip-integ"]
+	path = .vim/pack/plugins/start/vim-vsnip-integ
+	url = https://github.com/hrsh7th/vim-vsnip-integ
+[submodule ".vim/pack/plugins/start/vista.vim"]
+	path = .vim/pack/plugins/start/vista.vim
+	url = https://github.com/liuchengxu/vista.vim
+[submodule ".vim/pack/plugins/start/vim-gitgutter"]
+	path = .vim/pack/plugins/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
