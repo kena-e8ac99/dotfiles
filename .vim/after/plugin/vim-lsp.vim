@@ -25,7 +25,7 @@ def OnLspBufferEnabled()
   nnoremap <buffer> <expr><C-d> lsp#scroll(+4)
   nnoremap <buffer> <expr><C-u> lsp#scroll(-4)
 
-  inoremap <expr>   <Tab>      pumvisible() ? '<C-n>' : vsnip#jumpable(1) ? '<plug>(vsnip-jump-next)' : '<Tab>'
+  inoremap <expr>   <Tab>      pumvisible() ? '<C-n>' : vsnip#jumpable(1) ? '<plug>(vsnip-jump-next)' : exists('*copilot#Accept') ? copilot#Accept('<Tab>') : '<Tab>'
   inoremap <expr>   <S-Tab>    pumvisible() ? '<C-p>' : vsnip#jumpable(-1) ? '<plug>(vsnip-jump-prev)' : '<S-Tab>'
   inoremap <expr>   <CR>       pumvisible() ? asyncomplete#close_popup() : '<CR>'
 
