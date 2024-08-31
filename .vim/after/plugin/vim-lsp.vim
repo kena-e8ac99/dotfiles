@@ -10,6 +10,16 @@ if executable('clangd')
   setting.func(setting)
 endif
 
+if executable('bash-language-server')
+  var setting = {
+    'func': lsp#register_server,
+    'name': 'shell',
+    'cmd': (server_info) => [&shell, &shellcmdflag, 'bash-language-server start'],
+    'whitelist': ['sh', 'bash', 'zsh']
+  }
+  setting.func(setting)
+endif
+
 def OnLspBufferEnabled()
   setlocal omnifunc=lsp#complete
   nmap     <buffer> gd   <plug>(lsp-definition)
