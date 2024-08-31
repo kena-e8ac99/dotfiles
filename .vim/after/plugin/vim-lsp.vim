@@ -4,7 +4,7 @@ if executable('clangd')
   var setting = {
     'func': lsp#register_server,
     'name': 'clangd',
-    'cmd': (server_info) => ['/opt/clang/latest/bin/clangd', '-background-index'],
+    'cmd': (server_info) => ['clangd', '-background-index'],
     'whitelist': ['c', 'cpp', 'cc']
   }
   setting.func(setting)
