@@ -29,7 +29,7 @@ compinit
 zmodload zsh/complist
 
 zstyle ':completion:*' use-cache true
-zstyle ':completion:*' cache-path "~/.zsh/zcompcache"
+zstyle ':completion:*' cache-path "$HOME/.zsh/zcompcache"
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' list-colors di=34 ln=36 ex=33
@@ -86,9 +86,9 @@ function echo_git_status() {
 
 function echo_vi_mode() {
   case $KEYMAP in
-    (vicmd); echo "|" ;;
-    (vivis|vivli); echo "■" ;;
-    (*); echo "%(!.#.>)" ;;
+    vicmd) echo "|" ;;
+    vivis|vivli) echo "■" ;;
+    *) echo "%(!.#.>)" ;;
   esac
 }
 
@@ -116,8 +116,8 @@ function zle-keymap-select() {
 }
 
 # Plugins
-source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source "$HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 ZSH_AUTOSUGGEST_STRATEGY=(completion)
 
-source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
