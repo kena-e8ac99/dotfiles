@@ -64,24 +64,18 @@ bindkey -M menuselect 'l' vi-forward-char
 alias ls='ls --color=auto'
 
 # Prompt
-function echo_git_status() {
-  declare -r git_status="$(git status --porcelain --branch 2>/dev/null)"
-
-  if [[ -z $git_status ]]; then
-    return
-  fi
-
-  declare -r git_branch="$(echo "$git_status" | sed -n '1p' | cut -c4-)"
-
-  declare color="red"
-
-  if [[ "$(echo "$git_status" | grep '^' -c -m 2)" -eq 1 ]]; then
-    color="green"
-  elif [[ "$(echo "$git_status" | grep -E '^\\?\\?|^[ MARC]M|^M[ MD]' -c -m 1)" -eq 1 ]]; then
-    color="yellow"
-  fi
-
-  echo "%F{${color}}${git_branch}%f"
+get_git_branch_for_prompt() {
+  git status --porcelain --branch 2> /dev/null | {
+    branch_name=""; prompt_color="green"
+    while read -r line; do
+      case "$line" in
+        "## "*) branch_name="${line#"## "}" ;;
+        D[DU]*|U[DUA]*|A[UA]*) prompt_color="red"; break ;;
+        *) prompt_color="yellow" ;;
+      esac
+    done
+    [ "$branch_name" ] && echo "%F{${prompt_color}}${branch_name}%f"
+  }
 }
 
 function echo_vi_mode() {
@@ -104,7 +98,7 @@ function echo_name() {
 
 function precmd() {
   print -rP "
-%F{cyan}%~%f $(echo_git_status)"
+%F{cyan}%~%f $(get_git_branch_for_prompt)"
 
   PROMPT="$(echo_name)$(echo_color_prev_return_code)%(!.#.>)%f "
 }
