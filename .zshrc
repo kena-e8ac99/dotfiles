@@ -78,7 +78,7 @@ get_git_branch_for_prompt() {
   }
 }
 
-function echo_vi_mode() {
+get_vi_mode_for_prompt() {
   case $KEYMAP in
     vicmd) echo "|" ;;
     vivis|vivli) echo "■" ;;
@@ -86,26 +86,27 @@ function echo_vi_mode() {
   esac
 }
 
-function echo_color_prev_return_code() {
-  echo "%(?.%F{white}.%F{red})"
+color_based_on_prev_return_code() {
+  echo "%(?.%F{white}.%F{red})$1%f"
 }
 
-function echo_name() {
-  if [[ -n $SSH_CONNECTION ]]; then
-    echo "%F{blue}%n@%m%f "
-  fi
+get_ssh_login_info_for_prompt() {
+  [ "$SSH_CONNECTION" ] && echo "%F{blue}%n@%m%f "
 }
 
-function precmd() {
+set_prompt() {
+  PROMPT="$(get_ssh_login_info_for_prompt)$(color_based_on_prev_return_code "$1") "
+}
+
+precmd() {
   print -rP "
 %F{cyan}%~%f $(get_git_branch_for_prompt)"
 
-  PROMPT="$(echo_name)$(echo_color_prev_return_code)%(!.#.>)%f "
+  set_prompt "%(!.#.>)"
 }
 
-function zle-keymap-select() {
-  PROMPT="$(echo_name)$(echo_color_prev_return_code)$(echo_vi_mode)%f "
-
+zle-keymap-select() {
+  set_prompt "$(get_vi_mode_for_prompt)"
   zle reset-prompt
 }
 
