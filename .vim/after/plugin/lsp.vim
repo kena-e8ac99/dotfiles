@@ -83,6 +83,8 @@ def OnLspAttached()
 
   inoremap <expr>   <Tab>     pumvisible() ? '<C-n>' : '<Tab>'
   inoremap <expr>   <S-Tab>   pumvisible() ? '<C-p>' : '<S-Tab>'
+
+  autocmd! BufWritePre *.h,*.hpp,*.c,*.cc,*.cpp execute('LspFormat')
 enddef
 
 augroup lsp
