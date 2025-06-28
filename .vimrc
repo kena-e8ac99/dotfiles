@@ -70,6 +70,7 @@ set showcmd
 source ~/.vim/statusline.vim
 
 # Key Mapping
+g:mapleader = ","
 ## Normal Mode
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
 nnoremap <silent> +          <C-a>
