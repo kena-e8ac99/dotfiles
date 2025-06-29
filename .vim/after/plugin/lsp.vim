@@ -74,7 +74,6 @@ g:LspOptionsSet({
 def OnLspAttached()
   nnoremap <buffer> gd        <Cmd>LspGotoDefinition<CR>
   nnoremap <buffer> gt        <Cmd>LspGotoTypeDef<CR>
-  nnoremap <buffer> <Leader>s <Cmd>LspDocumentSymbol<CR>
   nnoremap <buffer> <Leader>h <Cmd>LspHover<CR>
   nnoremap <buffer> <Leader>q <Cmd>LspCodeAction<CR>
   nnoremap <buffer> <F2>      <Cmd>LspRename<CR>

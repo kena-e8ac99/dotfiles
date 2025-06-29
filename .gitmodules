@@ -16,3 +16,6 @@
 [submodule ".vim/pack/plugins/start/lsp"]
 	path = .vim/pack/plugins/start/lsp
 	url = https://github.com/yegappan/lsp
+[submodule ".vim/pack/plugins/start/scope.vim"]
+	path = .vim/pack/plugins/start/scope.vim
+	url = https://github.com/girishji/scope.vim
