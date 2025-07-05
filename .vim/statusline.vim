@@ -14,7 +14,9 @@ set statusline+=%=
 set statusline+=%2*\ %{&filetype}\ 
 set statusline+=%2*\ %{&fileencoding}\ 
 set statusline+=%1*\ %-10(COL:%c/%{col('$')}%)\ 
-set statusline+=%1*\ %-15(ROW:%l/%L%)
+set statusline+=%1*\ %-15(ROW:%l/%L%)\ 
+set statusline+=%2*\ %{ShowLspError()}\ 
+set statusline+=%2*\ %{ShowLspWarning()}
 
 # Highlight
 hi User1 ctermfg=007 ctermbg=240
@@ -64,10 +66,11 @@ augroup GitBranch
   autocmd VimEnter,WinEnter,BufEnter * UpdateGitBranch()
 augroup END
 
-def ShowLspError(): string
-  return exists('b:lsp_error_count') ? g:lsp_diagnostics_signs_error.text . b:lsp_error_count : ''
+def g:ShowLspError(): string
+  return exists('g:lspErrorCount') ? 'Error: ' .. g:lspErrorCount : ''
 enddef
 
-def ShowLspWarning(): string
-  return exists('b:lsp_warning_count') ? g:lsp_diagnostics_signs_warning.text . b:lsp_warning_count : ''
+def g:ShowLspWarning(): string
+  return exists('g:lspWarningCount') ? 'Warning: ' .. g:lspWarningCount : ''
 enddef
+

@@ -1,5 +1,7 @@
 vim9script
 
+import autoload 'lsp/diag.vim' as lsp
+
 # LSP Server setting
 g:LspAddServer([
   {
@@ -71,6 +73,12 @@ g:LspOptionsSet({
   diagSignWarningText: 'W',
 })
 
+def OnLspDiagsUpdated()
+  final info = lsp.DiagsGetErrorCount(bufnr("%"))
+  g:lspWarningCount = info->get("Warn", 0)
+  g:lspErrorCount = info->get("Error", 0)
+enddef
+
 def OnLspAttached()
   nnoremap <buffer> gd        <Cmd>LspGotoDefinition<CR>
   nnoremap <buffer> gt        <Cmd>LspGotoTypeDef<CR>
@@ -84,6 +92,7 @@ def OnLspAttached()
   inoremap <expr>   <S-Tab>   pumvisible() ? '<C-p>' : '<S-Tab>'
 
   autocmd! BufWritePre *.h,*.hpp,*.c,*.cc,*.cpp execute('LspFormat')
+  autocmd! User LspDiagsUpdated OnLspDiagsUpdated()
 enddef
 
 augroup lsp
