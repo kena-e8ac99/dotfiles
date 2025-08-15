@@ -39,11 +39,10 @@ g:LspOptionsSet({
   # Diagnostics
   autoPopulateDiags: true,
   highlightDiagInline: true,
-  showDiagInBallloon: false,
   showDiagInPopup: true,
   showDiagOnStatusLine: true,
   showDiagWithSign: true,
-  showDiagWithVirtualText: true,
+  showDiagWithVirtualText: false,
   diagVirtualTextAlign: 'above',
   diagVirtualTextWrap: 'wrap',
   # Highlight
