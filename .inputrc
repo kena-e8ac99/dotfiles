@@ -18,9 +18,7 @@ $if mode=vi
 $endif
 
 # Completion
-set show-all-if-unmodified on
 set show-all-if-ambiguous on
-
 set colored-stats on
 set visible-stats on
 set mark-symlinked-directories on

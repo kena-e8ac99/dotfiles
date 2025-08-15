@@ -4,6 +4,7 @@ case "$-" in *i*) : ;; *) return ;; esac
 # Options
 set -o vi
 shopt -s checkwinsize
+bind "\C-i: menu-complete"
 
 # Envrionment variables
 export EDITOR=vim
