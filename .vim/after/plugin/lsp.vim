@@ -3,20 +3,26 @@ vim9script
 import autoload 'lsp/diag.vim' as lsp
 
 # LSP Server setting
-g:LspAddServer([
-  {
-    name: 'clangd',
-    filetype: ['c', 'cpp'],
-    path: '/usr/bin/clangd',
-    args: ['--background-index']
-  },
-  {
-    name: 'bash-language-server',
-    filetype: ['sh', 'bash', 'zsh'],
-    path: '/usr/bin/bash-language-server',
-    args: ['start']
-  }
-])
+if filereadable('/usr/bin/clangd')
+  g:LspAddServer([
+    {
+      name: 'clangd',
+      filetype: ['c', 'cpp'],
+      path: '/usr/bin/clangd',
+      args: ['--background-index']
+    }
+  ])
+endif
+if filereadable('/usr/bin/bash-language-server')
+  g:LspAddServer([
+    {
+      name: 'bash-language-server',
+      filetype: ['sh', 'bash', 'zsh'],
+      path: '/usr/bin/bash-language-server',
+      args: ['start']
+    }
+  ])
+endif
 
 # LSP options
 g:LspOptionsSet({
