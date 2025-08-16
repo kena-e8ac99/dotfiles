@@ -20,7 +20,10 @@ export LESS_TERMCAP_us='\e[01;32m'
 # Aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-type less >/dev/null && { export PAGER=less; alias less="less -R"; }
+type less >/dev/null && {
+  export PAGER=less
+  alias less="less -R"
+}
 
 # PROMPT
 PROMPT_COMMAND='__set_prompt'
@@ -33,13 +36,16 @@ __set_prompt() {
   PS1="${PS1}\[\033[36m\w\033[0m\] "
 
   # Prompt for git status
-  if type git > /dev/null; then
+  if type git >/dev/null; then
     set -- "$1" "" "[32m"
     while read -r __line; do
       case "$__line" in
-        "## "*) set -- "$1" "${__line#"## "}" "$3" ;;
-        D[DU]*|U[DUA]*|A[UA]*) set -- "$1" "$2" "[31m"; break ;;
-        *) set -- "$1" "$2" "[33m" ;;
+      "## "*) set -- "$1" "${__line#"## "}" "$3" ;;
+      D[DU]* | U[DUA]* | A[UA]*)
+        set -- "$1" "$2" "[31m"
+        break
+        ;;
+      *) set -- "$1" "$2" "[33m" ;;
       esac
     done < <(git status --porcelain --branch 2>/dev/null)
 
@@ -60,4 +66,3 @@ __set_prompt() {
     PS1="${PS1}\[\033[31m\$\033[0m\] "
   fi
 }
-
