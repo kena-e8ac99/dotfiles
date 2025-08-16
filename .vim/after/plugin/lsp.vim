@@ -90,7 +90,7 @@ def OnLspAttached()
   inoremap <expr>   <Tab>     pumvisible() ? '<C-n>' : '<Tab>'
   inoremap <expr>   <S-Tab>   pumvisible() ? '<C-p>' : '<S-Tab>'
 
-  autocmd! BufWritePre *.h,*.hpp,*.c,*.cc,*.cpp execute('LspFormat')
+  autocmd! BufWritePre *.h,*.hpp,*.c,*.cc,*.cpp,*.sh,*.bashrc,*.zshrc execute('LspFormat')
   autocmd! User LspDiagsUpdated OnLspDiagsUpdated()
 enddef
 
