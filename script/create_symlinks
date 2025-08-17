@@ -1,0 +1,26 @@
+#!/bin/sh
+set -eu
+
+dotfiles_dir="$(
+  cd -- "$(dirname -- "$0")/../" || exit 1
+  pwd
+)"
+
+__ln() {
+  [ -e "$2" ] && mv "$2" "$2.bak"
+  ln -s "$dotfiles_dir/$1" "$2"
+}
+
+# for bash and Readline
+__ln ".bashrc" "$HOME/.bashrc"
+__ln ".inputrc" "$HOME/.inputrc"
+
+# for vim
+__ln ".vimrc" "$HOME/.vimrc"
+mkdir "$HOME/.vim"
+__ln ".vim/after" "$HOME/.vim/after"
+__ln ".vim/pack" "$HOME/.vim/pack"
+__ln ".vim/statusline.vim" "$HOME/.vim/statusline.vim"
+
+# setup for commit message template
+__ln ".commit_template" "$HOME/.commit_template"

@@ -1,0 +1,17 @@
+#!/bin/sh
+set -eu
+
+this_dir="$(
+  cd -- "$(dirname -- "$0")" || exit 1
+  pwd
+)"
+
+# update submodules
+git submodule init
+git submodule update
+
+# create symlinks
+"$this_dir"/create_symlinks
+
+# build docker image
+"$this_dir"/build_image

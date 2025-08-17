@@ -54,8 +54,10 @@ __set_prompt() {
 
   PS1="${PS1}\n"
 
-  # Prompt for user and hostname (only if ssh)
-  if [ "${SSH_CLIENT-}" ] || [ "${SSH_TTY-}" ]; then
+  # Prompt for docker and ssh
+  if [ "${DOCKER_CONTAINER_NAME-}" ]; then
+    PS1="${PS1}[\u@${DOCKER_CONTAINER_NAME}] "
+  elif [ "${SSH_CLIENT-}" ] || [ "${SSH_TTY-}" ]; then
     PS1="${PS1}[\u@\h] "
   fi
 

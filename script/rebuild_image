@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+
+if docker ps | grep dotfiles >/dev/null; then
+  echo "error: dotfiles container is still running." 2>&1
+  exit 1
+fi
+
+this_dir="$(
+  cd -- "$(dirname -- "$0")" || exit 1
+  pwd
+)"
+
+docker image rm dotfiles
+"$this_dir"/build_image

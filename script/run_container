@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+
+dotfiles_dir="$(
+  cd -- "$(dirname -- "$0")/../" || exit 1
+  pwd
+)"
+
+docker run \
+  -it --rm \
+  --name dotfiles -e DOCKER_CONTAINER_NAME=dotfiles \
+  -w "$dotfiles_dir" \
+  --mount type=bind,source="$dotfiles_dir",target="$dotfiles_dir" \
+  dotfiles:latest \
+  bash -c "$dotfiles_dir/script/create_symlinks && exec bash -i"
