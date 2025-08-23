@@ -12,6 +12,3 @@ git submodule update
 
 # create symlinks
 "$this_dir"/create_symlinks
-
-# build docker image
-"$this_dir"/build_image
