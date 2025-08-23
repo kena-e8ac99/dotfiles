@@ -2,7 +2,7 @@
 set -eu
 
 __ln() {
-  set -- "$(realpath "$1")" "$(realpath "$2")"
+  set -- "$(realpath -- "$1")" "$(realpath -- "$2")"
   [ "$1" = "$2" ] && return 0
   [ -e "$2" ] && mv "$2" "$2.bak"
   ln -s "$1" "$2"
