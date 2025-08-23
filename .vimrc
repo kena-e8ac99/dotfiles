@@ -61,7 +61,7 @@ set listchars=tab:>-,trail:-
 
 # Colorscheme
 set background=dark
-colorscheme sorbet
+colorscheme lunaperche
 
 # Statusline
 set cmdheight=2
