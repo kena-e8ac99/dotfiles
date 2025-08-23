@@ -20,7 +20,7 @@ export LESS_TERMCAP_us='\e[01;32m'
 # Aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-type less >/dev/null && {
+type less >/dev/null 2>/dev/null && {
   export PAGER=less
   alias less="less -R"
 }
@@ -36,7 +36,7 @@ __set_prompt() {
   PS1="${PS1}\[\033[36m\w\033[0m\] "
 
   # Prompt for git status
-  if type git >/dev/null; then
+  if type git >/dev/null 2>/dev/null; then
     set -- "$1" "" "[32m"
     while read -r __line; do
       case "$__line" in
