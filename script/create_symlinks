@@ -1,14 +1,11 @@
 #!/bin/sh
 set -eu
 
-dotfiles_dir="$(
-  cd -- "$(dirname -- "$0")/../" || exit 1
-  pwd
-)"
-
 __ln() {
+  set -- "$(realpath "$1")" "$(realpath "$2")"
+  [ "$1" = "$2" ] && return 0
   [ -e "$2" ] && mv "$2" "$2.bak"
-  ln -s "$dotfiles_dir/$1" "$2"
+  ln -s "$1" "$2"
 }
 
 # for bash and Readline
@@ -17,7 +14,7 @@ __ln ".inputrc" "$HOME/.inputrc"
 
 # for vim
 __ln ".vimrc" "$HOME/.vimrc"
-mkdir "$HOME/.vim"
+[ -d "$HOME/.vim" ] || mkdir "$HOME/.vim"
 __ln ".vim/after" "$HOME/.vim/after"
 __ln ".vim/pack" "$HOME/.vim/pack"
 __ln ".vim/statusline.vim" "$HOME/.vim/statusline.vim"
