@@ -7,7 +7,7 @@ docker run \
   -it --rm \
   --name dotfiles -e DOCKER_CONTAINER_NAME=dotfiles \
   -w "$dotfiles_dir" \
-  --mount type=bind,source="$dotfiles_dir",target="$dotfiles_dir" \
-  --mount type=bind,source="$HOME/.gitconfig",target="$HOME/.gitconfig" \
+  --mount "type=bind,source=$dotfiles_dir,target=$dotfiles_dir" \
+  --mount "type=bind,source=$HOME/.gitconfig,target=$HOME/.gitconfig" \
   dotfiles:latest \
   bash -c "$dotfiles_dir/script/create_symlinks && exec bash -i"
