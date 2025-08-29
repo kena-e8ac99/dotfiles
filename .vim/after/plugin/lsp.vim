@@ -68,9 +68,9 @@ g:LspOptionsSet({
   hideDisabledCodeActions: true,
   usePopupInCodeAction: true,
   # Snippet
-  snippetSupport: false,
+  snippetSupport: true,
   ultisnipsSupport: false,
-  vsnipSupport: false,
+  vsnipSupport: true,
   # Sign text
   diagSignErrorText: 'E',
   diagSignHintText: 'H',

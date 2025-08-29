@@ -16,3 +16,9 @@
 [submodule ".vim/pack/plugins/start/scope.vim"]
 	path = .vim/pack/plugins/start/scope.vim
 	url = https://github.com/girishji/scope.vim
+[submodule ".vim/pack/plugins/start/vim-vsnip"]
+	path = .vim/pack/plugins/start/vim-vsnip
+	url = https://github.com/hrsh7th/vim-vsnip
+[submodule ".vim/pack/plugins/start/vim-vsnip-integ"]
+	path = .vim/pack/plugins/start/vim-vsnip-integ
+	url = https://github.com/hrsh7th/vim-vsnip-integ
