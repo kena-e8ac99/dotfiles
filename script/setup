@@ -1,9 +1,0 @@
-#!/bin/sh
-set -eu
-
-# update submodules
-git submodule init
-git submodule update
-
-# create symlinks
-"$(dirname -- "$0")"/create_symlinks

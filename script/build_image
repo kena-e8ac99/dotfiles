@@ -1,6 +1,0 @@
-#!/bin/sh
-set -eu
-
-dotfiles_dir="$(realpath -- "$(dirname -- "$0")/../")"
-
-docker build --no-cache --build-arg username="$USER" -t dotfiles "$dotfiles_dir/"
