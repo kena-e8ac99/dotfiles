@@ -20,7 +20,8 @@
     "format-window-selector": "|",
     "window-rewrite": {
       "app_id<firefox>": "",
-      "app_id<alacritty>": ""
+      "app_id<alacritty>": "",
+      "app_id<md.obsidian.Obsidian>": ""
     },
     "format-icons": {
       "active": "",
