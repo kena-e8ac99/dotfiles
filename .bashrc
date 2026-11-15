@@ -16,6 +16,7 @@ export LESS_TERMCAP_se='\e[0m'
 export LESS_TERMCAP_so='\e[01;44;33m'
 export LESS_TERMCAP_ue='\e[0m'
 export LESS_TERMCAP_us='\e[01;32m'
+export PATH="$PATH:$HOME/bin"
 
 # Aliases
 alias ls='ls --color=auto'
