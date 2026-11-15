@@ -19,3 +19,6 @@
 [submodule ".vim/pack/plugins/start/vim-vsnip-integ"]
 	path = .vim/pack/plugins/start/vim-vsnip-integ
 	url = https://github.com/hrsh7th/vim-vsnip-integ
+[submodule ".config/fuzzel"]
+	path = .config/fuzzel
+	url = https://www.github.com/dracula/fuzzel
