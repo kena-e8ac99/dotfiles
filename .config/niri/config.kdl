@@ -273,6 +273,8 @@ spawn-at-startup "waybar"
 spawn-at-startup "fcitx5" "-d" "--replace"
 // This line sets background
 spawn-at-startup "swaybg" "-c" "121212"
+// This line starts swayidle
+spawn-at-startup "swayidle" "-w" "timeout" "610" "niri msg action power-off-monitors" "timeout" "600" "swaylock -f" "before-sleep" "swaylock -f"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
